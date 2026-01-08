@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPN Roadmap - NOW/NEXT/LATER</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="title-row">
+                <h1>SPN Roadmap</h1>
+                <button id="framework-info-btn" class="info-btn" title="Framework Information">ⓘ</button>
+            </div>
+
+            <!-- Compact Framework Legend with Tooltips -->
+            <div class="framework-legend">
+                <div class="legend-item" data-tooltip="High confidence, actively working on it. Team aligned, resources allocated.">
+                    <span class="legend-dot now-dot"></span>
+                    <span class="legend-text"><strong>NOW</strong> — Committed</span>
+                </div>
+                <div class="legend-item" data-tooltip="Need better definition, but likely to happen, dependent on NOW completing successfully and assumptions being confirmed.">
+                    <span class="legend-dot next-dot"></span>
+                    <span class="legend-text"><strong>NEXT</strong> — Emerging</span>
+                </div>
+                <div class="legend-item" data-tooltip="Ideas being considered. Will be refined as you learn more.">
+                    <span class="legend-dot later-dot"></span>
+                    <span class="legend-text"><strong>LATER</strong> — Exploratory</span>
+                </div>
+            </div>
+
+            <div class="header-controls">
+                <div class="control-group">
+                    <button id="view-toggle-btn" class="btn-control" title="Toggle view mode">
+                        <span id="view-mode-text">By Theme</span> ⇄
+                    </button>
+                    <button id="density-toggle-btn" class="btn-control" title="Toggle compact/expanded view">
+                        <span id="density-icon">⊟</span>
+                    </button>
+                    <button id="theme-toggle-btn" class="btn-control" title="Toggle theme">
+                        ☀️
+                    </button>
+                </div>
+                <div class="control-group">
+                    <button id="export-json-btn" class="btn-export" title="Export to JSON">JSON</button>
+                    <button id="export-markdown-btn" class="btn-export" title="Export to Markdown">MD</button>
+                    <button id="export-pdf-btn" class="btn-export" title="Export to PDF">PDF</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sticky Column Headers with Counters -->
+        <div class="sticky-column-headers">
+            <div class="sticky-header-col" id="now-header">NOW</div>
+            <div class="sticky-header-col" id="next-header">NEXT</div>
+            <div class="sticky-header-col" id="later-header">LATER</div>
+        </div>
+
+        <main id="roadmap-container">
+            <!-- Categories will be dynamically generated here -->
+        </main>
+
+        <footer>
+            <p>
+                <span class="footer-info">Version <span id="roadmap-version">2.3</span></span>
+                <span class="footer-separator">•</span>
+                <span class="footer-info">Last updated: <span id="last-updated"></span></span>
+            </p>
+        </footer>
+    </div>
+
+    <!-- Framework Info Modal -->
+    <div id="framework-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>NOW/NEXT/LATER Framework</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="framework-info">
+                    <div class="framework-phase">
+                        <h3><span class="phase-dot now-dot"></span> NOW — Committed</h3>
+                        <p>High confidence, actively working on it. Team aligned, resources allocated.</p>
+                    </div>
+                    <div class="framework-phase">
+                        <h3><span class="phase-dot next-dot"></span> NEXT — Emerging</h3>
+                        <p>Need better definition, but likely to happen, dependent on NOW completing successfully and assumptions being confirmed.</p>
+                    </div>
+                    <div class="framework-phase">
+                        <h3><span class="phase-dot later-dot"></span> LATER — Exploratory</h3>
+                        <p>Ideas being considered. Will be refined as you learn more.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="roadmap-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
