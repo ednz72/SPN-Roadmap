@@ -1,9 +1,5 @@
-{
-  "version": "2.3.3",
-  "exportDate": "2026-01-08T01:38:16.569Z",
-  "viewMode": "horizon",
-  "data": {
-    "categories": [
+const roadmapData = {
+  "categories": [
       {
         "id": "governance",
         "name": "GOVERNANCE",
@@ -145,5 +141,4 @@
         }
       }
     ]
-  }
-}
+};
